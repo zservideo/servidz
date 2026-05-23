@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Servidz</title>
+  <meta name="description" content="A modern family office. Selective collaboration. Long-duration ownership." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: {
+          sans: ["Inter", "SF Pro Display", "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"],
+          mono: ["JetBrains Mono", "SF Mono", "ui-monospace", "Menlo", "monospace"],
+        },
+        colors: { canvas: "#09090b", surface: "#0a0a0a" },
+        screens: {
+          'xs': '480px',
+        },
+      }},
+    };
+  </script>
+
+  <style>
+    html, body {
+      background: #09090b;
+      color: #fafafa;
+      font-family: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: "ss01", "cv11";
+      overflow-x: hidden;
+    }
+    ::selection { background: #fafafa; color: #09090b; }
+
+    .dot-hub     { box-shadow: 0 0 12px rgba(228,228,231,0.55); }
+    .dot-indigo  { box-shadow: 0 0 14px rgba(99,102,241,0.6); }
+    .dot-emerald { box-shadow: 0 0 14px rgba(16,185,129,0.6); }
+    .dot-amber   { box-shadow: 0 0 12px rgba(245,158,11,0.6); }
+
+    /* Module hover — gentle ambient glow tinted to module's accent */
+    .module {
+      transition: background-color 280ms ease, box-shadow 380ms ease;
+    }
+    .module.hub:hover      { background-color: rgba(228,228,231,0.012); }
+    .module.indigo:hover   { background-color: rgba(99,102,241,0.022); }
+    .module.emerald:hover  { background-color: rgba(16,185,129,0.022); }
+    .module.amber:hover    { background-color: rgba(245,158,11,0.022); }
+    .module.dual:hover     { background-color: rgba(99,102,241,0.014); }
+
+    /* Number marker for each module — large mono digit on the left */
+    .module-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #52525b; /* zinc-600 */
+    }
+
+    a { color: inherit; }
+
+    /* Mobile typography tightening */
+    @media (max-width: 640px) {
+      .hero-headline { font-size: 2.5rem !important; line-height: 1.02 !important; letter-spacing: -0.03em !important; }
+      .hero-eyebrow  { margin-bottom: 1.5rem !important; }
+      .hero-manifest p { font-size: 17px !important; line-height: 1.55 !important; }
+      .hero-manifest p.secondary { font-size: 16px !important; }
+      .hero-manifest p.tertiary { font-size: 15px !important; }
+      .module-headline { font-size: 1.5rem !important; }
+      .module-body { font-size: 15px !important; }
+      .intake-headline { font-size: 1.75rem !important; }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-canvas text-zinc-50">
+
+  <!-- ── HEADER ─────────────────────────────────────────────── -->
+  <header class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800 bg-canvas/90 backdrop-blur-md">
+    <div class="mx-auto max-w-[1400px] px-6 sm:px-8 md:px-14 py-4 sm:py-5 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3 flex-shrink-0">
+        <span class="w-2 h-2 rounded-full bg-zinc-200 dot-hub"></span>
+        <span class="font-mono text-[10px] sm:text-[11px] tracking-[0.28em] sm:tracking-[0.32em] text-zinc-100 uppercase font-medium">Servidz</span>
+      </div>
+      <span class="font-mono text-[10px] sm:text-[11px] tracking-[0.16em] sm:tracking-[0.22em] text-zinc-400 uppercase text-right">
+        <span class="hidden xs:inline">North Shore · </span>Boston <span class="hidden sm:inline">· Selective Intake</span>
+      </span>
+    </div>
+  </header>
+
+  <!-- ── HERO ───────────────────────────────────────────────── -->
+  <section class="border-b border-zinc-800">
+    <div class="mx-auto max-w-[1400px] px-6 sm:px-8 md:px-14 pt-32 pb-24 sm:pt-44 sm:pb-32 md:pt-56 md:pb-40">
+      <div class="hero-eyebrow font-mono text-[11px] tracking-[0.22em] text-zinc-400 uppercase font-medium mb-12 md:mb-16">
+        Private Founder Platform
+      </div>
+
+      <h1 class="hero-headline text-zinc-50 font-semibold mb-16 md:mb-20"
+          style="font-size: clamp(2.5rem, 5.2vw, 4.25rem); letter-spacing: -0.035em; line-height: 1.0;">
+        A modern family office.
+      </h1>
+
+      <div class="hero-manifest grid grid-cols-12 gap-8 max-w-6xl">
+        <div class="col-span-12 md:col-span-10">
+          <p class="text-zinc-100 mb-8 md:mb-10"
+             style="font-size: clamp(17px, 1.6vw, 22px); line-height: 1.55; letter-spacing: -0.015em;">
+            Servidz operates across private holdings, venture formation, strategic advisory, community and media platforms, and market activation.
+          </p>
+          <p class="secondary text-zinc-300 mb-8 md:mb-10"
+             style="font-size: clamp(16px, 1.4vw, 19px); line-height: 1.6; letter-spacing: -0.01em;">
+            We look for <span class="text-zinc-50 font-medium">1+1=3 opportunities</span> where capital, relationships, talent, narrative, and execution can compound.
+          </p>
+          <p class="tertiary text-zinc-400 max-w-3xl"
+             style="font-size: clamp(15px, 1.15vw, 16px); line-height: 1.7;">
+            Built for selective collaboration with founders, operators, investors, and institutions navigating moments of formation, growth, transition, or market activation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── OPERATING SURFACE ──────────────────────────────────── -->
+  <section class="border-b border-zinc-800">
+    <div class="mx-auto max-w-[1400px] px-6 sm:px-8 md:px-14 pt-20 sm:pt-28 pb-2">
+      <div class="flex items-center gap-2.5 mb-2 sm:mb-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-zinc-300"></span>
+        <span class="font-mono text-[11px] tracking-[0.22em] text-zinc-400 uppercase font-medium">
+          Operating Surface
+        </span>
+      </div>
+    </div>
+
+    <!-- Stacked modules — each is a full-width row with a hairline divider above -->
+    <div class="mx-auto max-w-[1400px] px-6 sm:px-8 md:px-14">
+
+      <!-- 01 · Private Holdings -->
+      <article class="module hub border-t border-zinc-800 py-14 md:py-20">
+        <div class="grid grid-cols-12 gap-6 md:gap-12">
+          <div class="col-span-12 md:col-span-6 lg:col-span-6">
+            <div class="flex items-baseline gap-5 md:gap-8 mb-6 md:mb-0">
+              <span class="module-num text-[24px] sm:text-[28px] md:text-[32px] leading-none">01</span>
+              <div>
+                <div class="flex items-center gap-2.5 mb-5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-zinc-200 dot-hub"></span>
+                  <span class="font-mono text-[11px] tracking-[0.22em] text-zinc-300 uppercase font-medium">Private Holdings</span>
+                </div>
+                <h3 class="module-headline text-zinc-50 font-semibold"
+                    style="font-size: clamp(1.5rem, 2.4vw, 2rem); letter-spacing: -0.025em; line-height: 1.1;">
+                  Long-duration ownership.
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-6 lg:col-span-5 md:col-start-7 lg:col-start-8">
+            <p class="module-body text-zinc-300 max-w-2xl"
+               style="font-size: clamp(15px, 1.15vw, 17px); line-height: 1.7;">
+              Long-duration interests across owned businesses, product ventures, advisory positions, and emerging platform bets.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 02 · Venture Formation -->
+      <article class="module indigo border-t border-zinc-800 py-14 md:py-20">
+        <div class="grid grid-cols-12 gap-6 md:gap-12">
+          <div class="col-span-12 md:col-span-6 lg:col-span-6">
+            <div class="flex items-baseline gap-5 md:gap-8 mb-6 md:mb-0">
+              <span class="module-num text-[24px] sm:text-[28px] md:text-[32px] leading-none">02</span>
+              <div>
+                <div class="flex items-center gap-2.5 mb-5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-indigo-500 dot-indigo"></span>
+                  <span class="font-mono text-[11px] tracking-[0.22em] text-zinc-300 uppercase font-medium">Venture Formation</span>
+                </div>
+                <h3 class="module-headline text-zinc-50 font-semibold"
+                    style="font-size: clamp(1.5rem, 2.4vw, 2rem); letter-spacing: -0.025em; line-height: 1.1;">
+                  0-to-1, where insight compounds.
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-6 lg:col-span-5 md:col-start-7 lg:col-start-8">
+            <p class="module-body text-zinc-300 max-w-2xl"
+               style="font-size: clamp(15px, 1.15vw, 17px); line-height: 1.7;">
+              Company creation and product development focused on markets where insight, relationships, and execution can unlock non-obvious opportunity.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03 · Strategic Advisory -->
+      <article class="module emerald border-t border-zinc-800 py-14 md:py-20">
+        <div class="grid grid-cols-12 gap-6 md:gap-12">
+          <div class="col-span-12 md:col-span-6 lg:col-span-6">
+            <div class="flex items-baseline gap-5 md:gap-8 mb-6 md:mb-0">
+              <span class="module-num text-[24px] sm:text-[28px] md:text-[32px] leading-none">03</span>
+              <div>
+                <div class="flex items-center gap-2.5 mb-5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 dot-emerald"></span>
+                  <span class="font-mono text-[11px] tracking-[0.22em] text-zinc-300 uppercase font-medium">Strategic Advisory</span>
+                </div>
+                <h3 class="module-headline text-zinc-50 font-semibold"
+                    style="font-size: clamp(1.5rem, 2.4vw, 2rem); letter-spacing: -0.025em; line-height: 1.1;">
+                  High-leverage, aligned upside.
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-6 lg:col-span-5 md:col-start-7 lg:col-start-8">
+            <p class="module-body text-zinc-300 max-w-2xl"
+               style="font-size: clamp(15px, 1.15vw, 17px); line-height: 1.7;">
+              Selective fractional work across communications, brand, growth, narrative, and go-to-market &mdash; typically where the mandate is high-leverage and compensation reflects cash, equity, or upside alignment.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 04 · Community & Media -->
+      <article class="module amber border-t border-zinc-800 py-14 md:py-20">
+        <div class="grid grid-cols-12 gap-6 md:gap-12">
+          <div class="col-span-12 md:col-span-6 lg:col-span-6">
+            <div class="flex items-baseline gap-5 md:gap-8 mb-6 md:mb-0">
+              <span class="module-num text-[24px] sm:text-[28px] md:text-[32px] leading-none">04</span>
+              <div>
+                <div class="flex items-center gap-2.5 mb-5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-amber-500 dot-amber"></span>
+                  <span class="font-mono text-[11px] tracking-[0.22em] text-zinc-300 uppercase font-medium">Community &amp; Media</span>
+                </div>
+                <h3 class="module-headline text-zinc-50 font-semibold"
+                    style="font-size: clamp(1.5rem, 2.4vw, 2rem); letter-spacing: -0.025em; line-height: 1.1;">
+                  Trust and signal, built locally.
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-6 lg:col-span-5 md:col-start-7 lg:col-start-8">
+            <p class="module-body text-zinc-300 max-w-2xl"
+               style="font-size: clamp(15px, 1.15vw, 17px); line-height: 1.7;">
+              Audience, trust, storytelling, local network density, and relationship infrastructure that create signal around people, companies, and markets.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 05 · Market Activation -->
+      <article class="module dual border-t border-zinc-800 py-14 md:py-20">
+        <div class="grid grid-cols-12 gap-6 md:gap-12">
+          <div class="col-span-12 md:col-span-6 lg:col-span-6">
+            <div class="flex items-baseline gap-5 md:gap-8 mb-6 md:mb-0">
+              <span class="module-num text-[24px] sm:text-[28px] md:text-[32px] leading-none">05</span>
+              <div>
+                <div class="flex items-center gap-2.5 mb-5">
+                  <span class="flex items-center">
+                    <span class="w-2.5 h-2.5 rounded-full bg-indigo-500 dot-indigo"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 dot-emerald -ml-1"></span>
+                  </span>
+                  <span class="font-mono text-[11px] tracking-[0.22em] text-zinc-300 uppercase font-medium">Market Activation</span>
+                </div>
+                <h3 class="module-headline text-zinc-50 font-semibold"
+                    style="font-size: clamp(1.5rem, 2.4vw, 2rem); letter-spacing: -0.025em; line-height: 1.1;">
+                  Relationships into outcomes.
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-6 lg:col-span-5 md:col-start-7 lg:col-start-8">
+            <p class="module-body text-zinc-300 max-w-2xl"
+               style="font-size: clamp(15px, 1.15vw, 17px); line-height: 1.7;">
+              Relationship-led business development, talent orchestration, partner activation, and go-to-market leverage.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 06 · Future Capital -->
+      <article class="module hub border-t border-zinc-800 py-14 md:py-20">
+        <div class="grid grid-cols-12 gap-6 md:gap-12">
+          <div class="col-span-12 md:col-span-6 lg:col-span-6">
+            <div class="flex items-baseline gap-5 md:gap-8 mb-6 md:mb-0">
+              <span class="module-num text-[24px] sm:text-[28px] md:text-[32px] leading-none">06</span>
+              <div>
+                <div class="flex items-center gap-2.5 mb-5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-zinc-200 dot-hub"></span>
+                  <span class="font-mono text-[11px] tracking-[0.22em] text-zinc-300 uppercase font-medium">Future Capital</span>
+                </div>
+                <h3 class="module-headline text-zinc-50 font-semibold"
+                    style="font-size: clamp(1.5rem, 2.4vw, 2rem); letter-spacing: -0.025em; line-height: 1.1;">
+                  Toward principal investing.
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-6 lg:col-span-5 md:col-start-7 lg:col-start-8">
+            <p class="module-body text-zinc-300 max-w-2xl"
+               style="font-size: clamp(15px, 1.15vw, 17px); line-height: 1.7;">
+              Servidz is evolving toward principal investing and fund formation, with a focus on opportunities where proprietary access and operating leverage create advantage.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- close bottom border on the section -->
+      <div class="border-t border-zinc-800 h-20 sm:h-28"></div>
+    </div>
+  </section>
+
+  <!-- ── INTAKE ─────────────────────────────────────────────── -->
+  <section class="border-b border-zinc-800">
+    <div class="mx-auto max-w-[1400px] px-6 sm:px-8 md:px-14 pt-20 sm:pt-28 pb-24 sm:pb-32">
+
+      <div class="flex items-center gap-2.5 mb-12 sm:mb-16">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 dot-emerald"></span>
+        <span class="font-mono text-[11px] tracking-[0.22em] text-zinc-400 uppercase font-medium">
+          Intake
+        </span>
+      </div>
+
+      <div class="grid grid-cols-12 gap-8">
+        <div class="col-span-12 md:col-span-9 lg:col-span-8">
+          <p class="intake-headline text-zinc-50 mb-8 md:mb-10"
+             style="font-size: clamp(1.75rem, 3.4vw, 2.75rem); line-height: 1.18; letter-spacing: -0.028em; font-weight: 600;">
+            Engagement is selective.<br/>
+            <span class="text-zinc-500">Professional referral preferred.</span>
+          </p>
+          <p class="text-zinc-300 max-w-2xl mb-12 md:mb-16"
+             style="font-size: clamp(16px, 1.3vw, 17px); line-height: 1.7;">
+            Thoughtful inquiries are reviewed where there is clear strategic fit.
+          </p>
+
+          <div class="pt-8 md:pt-10 border-t border-zinc-800 flex flex-col md:flex-row md:items-baseline gap-5 md:gap-16">
+            <a href="mailto:office@servidz.com"
+               class="font-mono text-[16px] sm:text-[18px] tracking-[0.04em] text-zinc-50 hover:text-zinc-300 transition-colors font-medium break-all sm:break-normal">
+              office@servidz.com
+            </a>
+            <span class="font-mono text-[12px] sm:text-[13px] tracking-[0.14em] text-zinc-300 uppercase font-medium">
+              North Shore · Boston · MA
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer class="bg-canvas">
+    <div class="mx-auto max-w-[1400px] px-6 sm:px-8 md:px-14 py-8 sm:py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6">
+      <div class="flex items-center gap-3">
+        <span class="w-2 h-2 rounded-full bg-zinc-200 dot-hub"></span>
+        <span class="font-mono text-[10px] sm:text-[11px] tracking-[0.28em] sm:tracking-[0.32em] text-zinc-200 uppercase font-medium">Servidz</span>
+      </div>
+      <div class="font-mono text-[10px] sm:text-[11px] tracking-[0.22em] text-zinc-400 uppercase">
+        © MMXXVI · All Rights Reserved
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
